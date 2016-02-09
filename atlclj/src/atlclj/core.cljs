@@ -29,7 +29,7 @@
 
           (text
             {:style
-              {:fontSize 50 
+              {:fontSize 52 
                :fontWeight "100"
                :marginBottom 20
                :textAlign "center"}}
@@ -74,7 +74,7 @@
 
             (text
               {:style {:color "white" :textAlign "center" :fontWeight "bold"}}
-              "Right"))))))))
+             "Right"))))))))
 
 
 (om/root main-view app-state {:target 1})
