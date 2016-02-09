@@ -8,6 +8,13 @@
 
 (defonce app-state (atom {:text "Welcome to atlclj"}))
 
+(defn peach-image []
+  (image
+            {:source
+              {:uri "./peach.png"}
+             :style {:width 80 
+                     :height 80 }}))
+
 (defn main-view [data owner]
   (reify
     om/IRender
@@ -16,12 +23,9 @@
         (view
           {:style
             {:flexDirection "column" 
-             :margin 20 
-             :alignItems "center"}}
-          (view {:style {:position "absolute"
-                         :top 10 :left 10 
-                         :backgroundColor "#ff0000" 
-                         :height 20 :width 20}})
+             :margin 0 
+             :top 69
+             :alignItems "center"  }}
 
           (text
             {:style
@@ -31,44 +35,46 @@
                :textAlign "center"}}
             (:text data))
 
-          
           (image
             {:source
               {:uri "https://raw.githubusercontent.com/cljsinfo/logo.cljs/master/cljs.png"}
              :style {:width 80 
-                     :height 80 
-                     :marginBottom 0}})
+                     :height 80 }})
 
+          ;;(peach-image) 
+          
           (view 
             {:style 
              {:flexDirection "row" 
               :margin 13 
               :alignItems "center"}}
-          (touchable-highlight
-            {:style {:backgroundColor "#999" 
+
+            (touchable-highlight
+              {:style {:backgroundColor "#999" 
                      :padding 10 
                      :borderRadius 5}
              :onPress #(alert "HELLO!")}
 
             (text
               {:style {:color "white" :textAlign "center" :fontWeight "bold"}}
-              "press me"))
+              "Left"))
 
-          (touchable-highlight
-            {:style {:backgroundColor "#999" :padding 10  :margin 13 :borderRadius 5}
-             :onPress #(alert "HELLO!")}
-
-            (text
-              {:style {:color "white" :textAlign "center" :fontWeight "bold"}}
-              "press me"))
-
-          (touchable-highlight
-            {:style {:backgroundColor "#999" :padding 10 :borderRadius 5}
-             :onPress #(alert "HELLO!")}
+            (touchable-highlight
+               {:style {:backgroundColor "#999" :padding 10  
+                        :margin 13 :borderRadius 5}
+             :onPress #(alert "Hola")}
 
             (text
               {:style {:color "white" :textAlign "center" :fontWeight "bold"}}
-              "press me"))))))))
+              "Center"))
+
+            (touchable-highlight
+             {:style {:backgroundColor "#999" :padding 10 :borderRadius 5}
+             :onPress #(alert "Right Button")}
+
+            (text
+              {:style {:color "white" :textAlign "center" :fontWeight "bold"}}
+              "Right"))))))))
 
 
 (om/root main-view app-state {:target 1})
