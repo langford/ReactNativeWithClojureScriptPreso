@@ -1,3 +1,4 @@
-All Rights reserved, contact me (pull request, or mj_langford on twitter) if you want me to give this presentation or  version thereof at your organization 
+All Rights reserved
 
+Contact me on twitter (mj_langford) if you want me to give this or another presentation to your group!
 
